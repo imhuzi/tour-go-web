@@ -29,10 +29,8 @@ func main() {
 	euler()
 	// 强制类型转换示例: math.Sqrt()三角形勾股定理
 	triangle()
-
 	// rune
-	var ru rune = rune(65)
-	fmt.Println(ru)
+	playRuneType()
 }
 
 // 欧拉公式(复数)
@@ -50,7 +48,21 @@ func euler() {
 func triangle() {
 	var a, b int = 3, 4
 	var c int
+	// 需要强制转换类型
 	c = int(math.Sqrt(float64(a*a + b*b)))
 
 	fmt.Printf("求三角形第三边: %d \n", c)
+}
+
+/**
+  rune type test:
+  Rune 是 int32 的别名。用 UTF-8 进行编码。
+  这个类型在什么时候使用呢？例如需要遍 历字符串中的字符。
+  可以循环每个字节（仅在使用 US ASCII 编码字符串时与字符等价， 而它们在 Go 中不存在！）。
+  因此为了获得实际的字符，需要使用 rune 类型。
+*/
+func playRuneType() {
+	a, b, c, d := 'a', 'b', 'c', 'd'
+	//result> RuneType: a=97, b=98, c=99, d=d
+	fmt.Printf("RuneType: a=%d, b=%d, c=%d, d=%c", a, b, c, d)
 }
