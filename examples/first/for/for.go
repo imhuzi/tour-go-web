@@ -12,6 +12,7 @@ for 的 3中形式
 1. for init ; condition ; post { } ← 和 C 的 for 一样
 2. for condition { } ← 和 while 一样
 3. for { } ← 死循环
+4. for 后面的条件不需要括号
 */
 func main() {
 	// 和其他语言一样的 for
@@ -25,6 +26,9 @@ func main() {
 	)
 
 	printFile("/Users/hz/abc.txt")
+
+	// 死循环
+	//forever()
 }
 
 func testFor(count int) (total int) {
@@ -35,6 +39,7 @@ func testFor(count int) (total int) {
 	return sum
 }
 
+// 将 int 转为 二进制
 func covertToBin(n int) string {
 	result := ""
 	for ; n > 0; n /= 2 {
@@ -53,5 +58,12 @@ func printFile(fileName string) {
 	// 和 while 效果一样
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
+	}
+}
+
+// go 语言的死循环，比java简洁
+func forever() {
+	for {
+		println("abc")
 	}
 }
