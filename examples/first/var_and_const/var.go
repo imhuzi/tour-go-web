@@ -7,6 +7,7 @@ import "fmt"
 // 3. 函数内定义的变量 作用域只是在函数内
 // 4. go 有类型推断，在定义变量的时候可以省略 类型，
 // go 没有全局变量
+// 一个特殊的变量名是 _（下划线）
 var ss = "Hello Variable"
 
 // 多个变量定义, 可以只写 一个 var, 多个变量放到()里面
@@ -27,6 +28,9 @@ func main() {
 	variableShorter()
 
 	fmt.Println(ss)
+	// 一个特殊的变量名是 _（下划线）
+	_, b := 4, 5
+	fmt.Println(b)
 }
 
 /**
